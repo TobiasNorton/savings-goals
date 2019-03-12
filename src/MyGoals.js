@@ -125,7 +125,6 @@ class MyGoals extends Component {
           <p>My Goals</p>
           <p>New Goal</p>
           <p>Edit Goals</p>
-          <p>My Goals</p>
         </nav>
         {/* </div> */}
         <section className="goals-list">
