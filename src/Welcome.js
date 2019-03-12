@@ -11,7 +11,6 @@ class Welcome extends Component {
             <p>My Goals</p>
             <p>New Goal</p>
             <p>Edit Goals</p>
-            <p>My Goals</p>
           </nav>
         </div>
         <section className="login-area">

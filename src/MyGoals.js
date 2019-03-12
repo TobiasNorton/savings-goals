@@ -15,6 +15,12 @@ class MyGoals extends Component {
           deadline: 'September 10, 2019'
         },
         {
+          goalName: 'New Backpack',
+          goalAmount: 600,
+          balance: 0,
+          deadline: 'August 15, 2019'
+        },
+        {
           goalName: 'Fender Telecaster',
           goalAmount: 1500,
           balance: 200,
@@ -31,12 +37,6 @@ class MyGoals extends Component {
           goalAmount: 6000,
           balance: 1250,
           deadline: 'April 14, 2020'
-        },
-        {
-          goalName: 'New Backpack',
-          goalAmount: 600,
-          balance: 0,
-          deadline: 'August 15, 2019'
         },
         {
           goalName: 'Fender Stratocaster',
@@ -59,69 +59,75 @@ class MyGoals extends Component {
     } else {
       return this.state.goals.map((goal, index) => {
         return (
-          <tr className="row">
+          <tr className="row" key={index}>
             <td>{goal.goalName}</td>
             <td>{goal.goalAmount}</td>
             <td>{goal.balance}</td>
             <td>{goal.deadline}</td>
+            <td className="hide-cell">
+              <div className="list-buttons">
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
+            </td>
           </tr>
         )
       })
     }
   }
 
-  goalName = () => {
-    return this.state.goals.map((goal, index) => {
-      return (
-        <div>
-          <p>{goal.goalName}</p>
-        </div>
-      )
-    })
-  }
+  // goalName = () => {
+  //   return this.state.goals.map((goal, index) => {
+  //     return (
+  //       <div>
+  //         <p>{goal.goalName}</p>
+  //       </div>
+  //     )
+  //   })
+  // }
 
-  goalAmount = () => {
-    return this.state.goals.map((goal, index) => {
-      return (
-        <div>
-          <p>${goal.goalAmount}</p>
-        </div>
-      )
-    })
-  }
+  // goalAmount = () => {
+  //   return this.state.goals.map((goal, index) => {
+  //     return (
+  //       <div>
+  //         <p>${goal.goalAmount}</p>
+  //       </div>
+  //     )
+  //   })
+  // }
 
-  balance = () => {
-    return this.state.goals.map((goal, index) => {
-      return (
-        <div>
-          <p>${goal.balance}</p>
-        </div>
-      )
-    })
-  }
+  // balance = () => {
+  //   return this.state.goals.map((goal, index) => {
+  //     return (
+  //       <div>
+  //         <p>${goal.balance}</p>
+  //       </div>
+  //     )
+  //   })
+  // }
 
-  deadline = () => {
-    return this.state.goals.map((goal, index) => {
-      return (
-        <div>
-          <p>{goal.deadline}</p>
-        </div>
-      )
-    })
-  }
+  // deadline = () => {
+  //   return this.state.goals.map((goal, index) => {
+  //     return (
+  //       <div>
+  //         <p>{goal.deadline}</p>
+  //       </div>
+  //     )
+  //   })
+  // }
 
   render() {
     return (
       <div className="my-goals">
-        <div>
-          <h1 className="title">Personal Savings Goals</h1>
-          <nav className="nav-bar">
-            <p>My Goals</p>
-            <p>New Goal</p>
-            <p>Edit Goals</p>
-            <p>My Goals</p>
-          </nav>
-        </div>
+        {/* <div> */}
+        <h1 className="title">Personal Savings Goals</h1>
+        <nav className="nav-bar">
+          <p>My Goals</p>
+          <p>New Goal</p>
+          <p>Edit Goals</p>
+          <p>My Goals</p>
+        </nav>
+        {/* </div> */}
         <section className="goals-list">
           <p>My Goals</p>
           <table className="table">
@@ -132,13 +138,8 @@ class MyGoals extends Component {
               <th>Deadline</th>
             </tr>
             {this.displayGoals()}
-            <tr className="test">
-              <td>Goal</td>
-              <td>Amount</td>
-              <td>Current Balance</td>
-              <td>Goal</td>
-            </tr>
           </table>
+          <button className="create-new">Create New Goal</button>
           {/* <div className="list-container">
             <div>
               <p>Goal</p>

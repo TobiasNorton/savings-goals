@@ -13,7 +13,8 @@ class App extends Component {
     return (
       <Router>
         {/* <Welcome /> */}
-        <MyGoals />
+        {/* <MyGoals /> */}
+        <NewGoal />
       </Router>
     )
   }

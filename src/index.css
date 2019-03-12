@@ -94,6 +94,38 @@ td {
   padding: 1rem;
 }
 
+.list-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+}
+
+.list-buttons button {
+  /* margin-left: 1rem;
+  margin-right: 1rem; */
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  margin: 0 1rem 0 1rem;
+  background-color: white;
+  border-radius: 5px;
+  width: 6rem;
+}
+
+td.hide-cell {
+  /* background-color: hsla(185, 50%, 75%, 0); */
+  padding: 0;
+}
+
+.create-new {
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  width: 10rem;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+}
+
 /* .test {
   display: flex;
   flex-direction: column;
