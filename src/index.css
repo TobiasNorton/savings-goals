@@ -11,12 +11,108 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+}
+
+.nav-bar p {
+  color: white;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+}
+
 .welcome {
+}
+
+.welcome-greeting {
+  margin-top: 10rem;
+  font-size: 2rem;
 }
 
 .login-area {
   background: linear-gradient(hsla(185, 0%, 0%, 0), hsla(185, 0%, 0%, 0)),
     url('./bjorn-snelders-1415617-unsplash.jpg');
   background-size: cover;
+  background-position: center;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-button {
+  font-size: 1rem;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: hsla(185, 0%, 100%, 0.3);
+  padding: 0.5rem;
+  width: 10rem;
+}
+
+/* .my-goals {
+  display: flex;
+  flex-direction: column;
+  align-items:
+} */
+
+.goal-list-header {
+}
+
+.goals-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90vw;
+  max-width: 60rem;
+  margin: 2rem 3rem 2rem 3rem;
+}
+
+.table {
+  width: 90vw;
+  max-width: 60rem;
+  margin: 2rem 3rem 2rem 3rem;
+}
+
+th {
+  margin: 1rem;
+}
+
+tr {
+  margin: 1rem;
+}
+
+td {
+  background-color: lightgrey;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.test {
+  display: flex;
+  flex-direction: column;
+}
+
+.test th {
+  background: grey;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.test td {
+  background: lightgrey;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
 }

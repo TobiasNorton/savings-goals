@@ -12,8 +12,8 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Welcome />
-        {/* <MyGoals /> */}
+        {/* <Welcome /> */}
+        <MyGoals />
       </Router>
     )
   }

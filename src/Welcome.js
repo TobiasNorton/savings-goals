@@ -6,12 +6,18 @@ class Welcome extends Component {
     return (
       <div className="welcome">
         <div>
-          <h1>Personal Savings Goals</h1>
+          <h1 className="title">Personal Savings Goals</h1>
+          <nav className="nav-bar">
+            <p>My Goals</p>
+            <p>New Goal</p>
+            <p>Edit Goals</p>
+            <p>My Goals</p>
+          </nav>
         </div>
         <section className="login-area">
-          <p>Welcome!</p>
+          <p className="welcome-greeting">Welcome!</p>
           <p>Please Log In to Continue</p>
-          <button>Log In</button>
+          <button className="login-button">Log In</button>
         </section>
       </div>
     )
