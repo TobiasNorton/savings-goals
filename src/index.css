@@ -82,23 +82,19 @@ code {
   width: 90vw;
   max-width: 60rem;
   margin: 2rem 3rem 2rem 3rem;
-}
-
-th {
-  margin: 1rem;
+  /* border-collapse: separate;
+  border-spacing: 0px 3px; */
 }
 
 tr {
-  margin: 1rem;
 }
 
 td {
   background-color: lightgrey;
-  margin: 1rem;
   padding: 1rem;
 }
 
-.test {
+/* .test {
   display: flex;
   flex-direction: column;
 }
@@ -115,4 +111,4 @@ td {
   margin: 1rem;
   padding: 0.5rem;
   border-radius: 5px;
-}
+} */

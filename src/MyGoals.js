@@ -59,7 +59,7 @@ class MyGoals extends Component {
     } else {
       return this.state.goals.map((goal, index) => {
         return (
-          <tr>
+          <tr className="row">
             <td>{goal.goalName}</td>
             <td>{goal.goalAmount}</td>
             <td>{goal.balance}</td>
@@ -125,14 +125,14 @@ class MyGoals extends Component {
         <section className="goals-list">
           <p>My Goals</p>
           <table className="table">
-            <tr>
+            <tr className="test">
               <th>Goal</th>
               <th>Amount</th>
               <th>Current Balance</th>
               <th>Deadline</th>
             </tr>
             {this.displayGoals()}
-            <tr>
+            <tr className="test">
               <td>Goal</td>
               <td>Amount</td>
               <td>Current Balance</td>
