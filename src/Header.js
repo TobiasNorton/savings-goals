@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Header extends Component {
   render() {
@@ -6,9 +7,9 @@ class Header extends Component {
       <div>
         <h1 className="title">Personal Savings Goals</h1>
         <nav className="nav-bar">
-          <p>My Goals</p>
-          <p>New Goal</p>
-          <p>Edit Goals</p>
+          <Link to="">My Goals</Link>
+          <Link to="">New Goal</Link>
+          <Link to="">Edit Goals</Link>
         </nav>
       </div>
     )

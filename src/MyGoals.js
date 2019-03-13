@@ -87,36 +87,6 @@ class MyGoals extends Component {
   //   })
   // }
 
-  // goalAmount = () => {
-  //   return this.state.goals.map((goal, index) => {
-  //     return (
-  //       <div>
-  //         <p>${goal.goalAmount}</p>
-  //       </div>
-  //     )
-  //   })
-  // }
-
-  // balance = () => {
-  //   return this.state.goals.map((goal, index) => {
-  //     return (
-  //       <div>
-  //         <p>${goal.balance}</p>
-  //       </div>
-  //     )
-  //   })
-  // }
-
-  // deadline = () => {
-  //   return this.state.goals.map((goal, index) => {
-  //     return (
-  //       <div>
-  //         <p>{goal.deadline}</p>
-  //       </div>
-  //     )
-  //   })
-  // }
-
   render() {
     return (
       <div className="my-goals">

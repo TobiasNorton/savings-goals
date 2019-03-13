@@ -81,7 +81,9 @@ code {
   border-spacing: 0px 3px; */
 }
 
-tr {
+th {
+  background-color: lightgrey;
+  padding: 1rem;
 }
 
 td {
