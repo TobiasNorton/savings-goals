@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import data from './goals.json'
 import Header from './Header'
+import GoalItem from './GoalItem'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
@@ -66,24 +67,39 @@ class MyGoals extends Component {
     window.location = '/edit/:id'
   }
 
+  deleteGoal = event => {
+    console.log(event.target)
+    // axios.delete(`/api/goal/${this.state.goals}`).then(response => {
+    // })
+  }
+
   displayGoals = () => {
     return this.state.goals.map((goal, index) => {
       return (
-        <tr className="row" key={index}>
-          <td>{goal.name}</td>
-          <td>{goal.target_amount}</td>
-          <td>{goal.balance}</td>
-          <td>{goal.due_date}</td>
-          <td className="hide-cell">
-            <div className="list-buttons">
-              <Link to="/edit/:id" className="edit-button">
-                Edit
-              </Link>
-              {/* <button onClick={this.goToEdit}>Edit</button> */}
-              <button onClick={this.deleteGoal}>Delete</button>
-            </div>
-          </td>
-        </tr>
+        <GoalItem
+          key={index}
+          id={goal.id}
+          name={goal.name}
+          amount={goal.target_amount}
+          balance={goal.balance}
+          date={goal.due_date}
+        />
+        // <tr className="row" key={index}>
+        //   <td>{goal.name}</td>
+        //   <td>{goal.target_amount}</td>
+        //   <td>{goal.balance}</td>
+        //   <td>{goal.due_date}</td>
+        //   <td className="hide-cell">
+        //     <div className="list-buttons">
+        //       <Link to="/edit/:id" className="edit-button">
+        //         Edit
+        //       </Link>
+        //       {/* <button onClick={this.goToEdit}>Edit</button> */}
+        //       <button onClick={this.deleteGoal}>Delete</button>
+        //       {/* <button onClick={() => this.deleteGoal(goal)}>Delete</button> */}
+        //     </div>
+        //   </td>
+        // </tr>
       )
     })
   }
