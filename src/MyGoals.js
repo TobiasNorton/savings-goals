@@ -2,52 +2,64 @@ import React, { Component } from 'react'
 import data from './goals.json'
 import Header from './Header'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 class MyGoals extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      //data
       goals: [
-        {
-          goalName: 'Gibson Les Paul',
-          goalAmount: 4500,
-          balance: 600,
-          deadline: 'September 10, 2019'
-        },
-        {
-          goalName: 'New Backpack',
-          goalAmount: 600,
-          balance: 0,
-          deadline: 'August 15, 2019'
-        },
-        {
-          goalName: 'Fender Telecaster',
-          goalAmount: 1500,
-          balance: 200,
-          deadline: 'December 15, 2019'
-        },
-        {
-          goalName: 'Thailand, Cambodia',
-          goalAmount: 4500,
-          balance: 500,
-          deadline: 'January 20, 2020'
-        },
-        {
-          goalName: 'Scotland, Ireland, UK',
-          goalAmount: 6000,
-          balance: 1250,
-          deadline: 'April 14, 2020'
-        },
-        {
-          goalName: 'Fender Stratocaster',
-          goalAmount: 1800,
-          balance: 3,
-          deadline: 'November 17, 2019'
-        }
+        // {
+        //   goalName: 'Gibson Les Paul',
+        //   goalAmount: 4500,
+        //   balance: 600,
+        //   deadline: 'September 10, 2019'
+        // },
+        // {
+        //   goalName: 'New Backpack',
+        //   goalAmount: 600,
+        //   balance: 0,
+        //   deadline: 'August 15, 2019'
+        // },
+        // {
+        //   goalName: 'Fender Telecaster',
+        //   goalAmount: 1500,
+        //   balance: 200,
+        //   deadline: 'December 15, 2019'
+        // },
+        // {
+        //   goalName: 'Thailand, Cambodia',
+        //   goalAmount: 4500,
+        //   balance: 500,
+        //   deadline: 'January 20, 2020'
+        // },
+        // {
+        //   goalName: 'Scotland, Ireland, UK',
+        //   goalAmount: 6000,
+        //   balance: 1250,
+        //   deadline: 'April 14, 2020'
+        // },
+        // {
+        //   goalName: 'Fender Stratocaster',
+        //   goalAmount: 1800,
+        //   balance: 3,
+        //   deadline: 'November 17, 2019'
+        // }
       ]
     }
+  }
+
+  componentDidMount = () => {
+    axios.get('/api/goals').then(response => {
+      console.log(response.data)
+      this.setState(
+        {
+          goals: response.data
+        },
+        () => console.log(this.state.goals)
+      )
+    })
   }
 
   goToEdit = () => {
@@ -55,35 +67,34 @@ class MyGoals extends Component {
   }
 
   displayGoals = () => {
-    if (!this.state.goals) {
+    return this.state.goals.map((goal, index) => {
+      return (
+        <tr className="row" key={index}>
+          <td>{goal.name}</td>
+          <td>{goal.target_amount}</td>
+          <td>{goal.balance}</td>
+          <td>{goal.due_date}</td>
+          <td className="hide-cell">
+            <div className="list-buttons">
+              <Link to="/edit/:id" className="edit-button">
+                Edit
+              </Link>
+              {/* <button onClick={this.goToEdit}>Edit</button> */}
+              <button onClick={this.deleteGoal}>Delete</button>
+            </div>
+          </td>
+        </tr>
+      )
+    })
+  }
+
+  noGoalsToDisplay = () => {
+    if (this.state.goals.length === 0) {
       return (
         <>
           <p>You have no current goals.</p>
-          <button>Create a Goal!</button>
         </>
       )
-    } else {
-      return this.state.goals.map((goal, index) => {
-        return (
-          <tr className="row" key={index}>
-            <td>{goal.goalName}</td>
-            <td>{goal.goalAmount}</td>
-            <td>{goal.balance}</td>
-            <td>{goal.deadline}</td>
-            <td className="hide-cell">
-              <div className="list-buttons">
-                {/* <button>Edit</button>
-                <button>Delete</button> */}
-                <Link to="/edit/:id" className="edit-button">
-                  Edit
-                </Link>
-                {/* <button onClick={this.goToEdit}>Edit</button> */}
-                <button onClick={this.deleteGoal}>Delete</button>
-              </div>
-            </td>
-          </tr>
-        )
-      })
     }
   }
 
@@ -110,14 +121,18 @@ class MyGoals extends Component {
         <section className="goals-list">
           <p className="header">My Goals</p>
           <table className="table">
-            <tr className="test">
-              <th>Goal</th>
-              <th>Amount</th>
-              <th>Current Balance</th>
-              <th>Deadline</th>
-            </tr>
-            {this.displayGoals()}
+            <thead>
+              <tr className="test">
+                <th>Goal</th>
+                <th>Amount</th>
+                <th>Current Balance</th>
+                <th>Deadline</th>
+              </tr>
+            </thead>
+
+            <tbody>{this.displayGoals()}</tbody>
           </table>
+          {this.noGoalsToDisplay()}
           {/* <button className="create-new">Create New Goal</button> */}
           <Link to="/new" className="create-new">
             Create New Goal
