@@ -7,9 +7,15 @@ class Header extends Component {
       <div>
         <h1 className="title">Personal Savings Goals</h1>
         <nav className="nav-bar">
-          <Link to="">My Goals</Link>
-          <Link to="">New Goal</Link>
-          <Link to="">Edit Goals</Link>
+          <Link to="/goals" className="nav-link">
+            My Goals
+          </Link>
+          <Link to="/new" className="nav-link">
+            New Goal
+          </Link>
+          <Link to="/edit/:id" className="nav-link">
+            Edit Goals
+          </Link>
         </nav>
       </div>
     )

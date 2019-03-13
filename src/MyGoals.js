@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import data from './goals.json'
 import Header from './Header'
+import { Link } from 'react-router-dom'
 
 class MyGoals extends Component {
   constructor(props) {
@@ -49,6 +50,10 @@ class MyGoals extends Component {
     }
   }
 
+  goToEdit = () => {
+    window.location = '/edit/:id'
+  }
+
   displayGoals = () => {
     if (!this.state.goals) {
       return (
@@ -67,8 +72,13 @@ class MyGoals extends Component {
             <td>{goal.deadline}</td>
             <td className="hide-cell">
               <div className="list-buttons">
-                <button>Edit</button>
-                <button>Delete</button>
+                {/* <button>Edit</button>
+                <button>Delete</button> */}
+                <Link to="/edit/:id" className="edit-button">
+                  Edit
+                </Link>
+                {/* <button onClick={this.goToEdit}>Edit</button> */}
+                <button onClick={this.deleteGoal}>Delete</button>
               </div>
             </td>
           </tr>
@@ -108,7 +118,10 @@ class MyGoals extends Component {
             </tr>
             {this.displayGoals()}
           </table>
-          <button className="create-new">Create New Goal</button>
+          {/* <button className="create-new">Create New Goal</button> */}
+          <Link to="/new" className="create-new">
+            Create New Goal
+          </Link>
           {/* <div className="list-container">
             <div>
               <p>Goal</p>

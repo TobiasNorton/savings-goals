@@ -14,10 +14,10 @@ class App extends Component {
       <Router>
         <>
           <Route exact path="/" component={Welcome} />
-          <Route exact path="/goals/:user_id" component={MyGoals} />
-          <Route exact path="/" component={NewGoal} />
-          <Route exact path="/" component={EditGoal} />
-          <Route exact path="/" component={ChooseGoal} />
+          <Route exact path="/goals" component={MyGoals} />
+          <Route exact path="/new" component={NewGoal} />
+          <Route exact path="/edit/:id" component={EditGoal} />
+          <Route exact path="/choose" component={ChooseGoal} />
         </>
       </Router>
     )
