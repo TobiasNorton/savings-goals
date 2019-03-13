@@ -13,9 +13,9 @@ class App extends Component {
     return (
       <Router>
         {/* <Welcome /> */}
-        {/* <MyGoals /> */}
+        <MyGoals />
         {/* <NewGoal /> */}
-        <EditGoal />
+        {/* <EditGoal /> */}
       </Router>
     )
   }

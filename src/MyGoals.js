@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import data from './goals.json'
+import Header from './Header'
 
 class MyGoals extends Component {
   constructor(props) {
@@ -119,16 +120,15 @@ class MyGoals extends Component {
   render() {
     return (
       <div className="my-goals">
-        {/* <div> */}
-        <h1 className="title">Personal Savings Goals</h1>
+        {/* <h1 className="title">Personal Savings Goals</h1>
         <nav className="nav-bar">
           <p>My Goals</p>
           <p>New Goal</p>
           <p>Edit Goals</p>
-        </nav>
-        {/* </div> */}
+        </nav> */}
+        <Header />
         <section className="goals-list">
-          <p>My Goals</p>
+          <p className="header">My Goals</p>
           <table className="table">
             <tr className="test">
               <th>Goal</th>

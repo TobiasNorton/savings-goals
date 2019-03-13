@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
+import Header from './Header'
 
 class NewGoal extends Component {
   render() {
     return (
       <div>
-        <h1 className="title">Personal Savings Goals</h1>
+        {/* <h1 className="title">Personal Savings Goals</h1>
         <nav className="nav-bar">
           <p>My Goals</p>
           <p>New Goal</p>
           <p>Edit Goals</p>
-        </nav>
+        </nav> */}
+        <Header />
+
         <section>
           <p className="header">Create a New Goal</p>
           <form className="new-goal">
