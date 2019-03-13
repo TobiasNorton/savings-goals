@@ -21,14 +21,32 @@ code {
   background-color: black;
 }
 
-.nav-bar p {
+/* .nav-bar p {
   color: white;
-}
+} */
 
 .nav-link {
   color: white;
   padding: 1rem;
   text-decoration: none;
+  background-color: black;
+  border: none;
+  font-size: 1rem;
+}
+
+.dropdown {
+  position: absolute;
+  right: 10%;
+  color: white;
+  background-color: black;
+  padding-bottom: 1rem;
+}
+
+.dropdown-item {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 1rem 1rem 0 1rem;
 }
 
 .title {
@@ -126,7 +144,7 @@ td {
   background-color: white;
   border-radius: 5px;
   width: 6rem;
-  height: 2rem;
+  /* height: 2rem; */
 }
 
 td.hide-cell {
