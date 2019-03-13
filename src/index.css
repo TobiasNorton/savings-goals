@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+:root {
+}
+
 .nav-bar {
   display: flex;
   justify-content: space-evenly;
@@ -24,9 +27,6 @@ code {
 .title {
   text-align: center;
   font-size: 3rem;
-}
-
-.welcome {
 }
 
 .welcome-greeting {
